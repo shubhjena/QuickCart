@@ -1,7 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Nav from './components/Nav.jsx'
+import Home from './components/HomePage/Home.jsx'
+import Footer from "./components/Footer.jsx";
+import { BrowserRouter } from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -20,6 +23,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;

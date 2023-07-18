@@ -46,8 +46,8 @@ function NavScroll({searchbtn}) {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action2">Wishlist <SuitHeartFill color='red'/></Nav.Link>
-            <Nav.Link href="#action3">Cart <Cart4 /></Nav.Link>
+            <NavLink to="/wishlist" className='ms-3'>Wishlist <SuitHeartFill color='red'/></NavLink>
+            <NavLink to='/cart' className='mx-3'>Cart<Cart4 /></NavLink>
             <>
             {isAuthenticated?
               (<><NavDropdown title={`Hello, ${user.given_name}`} id="basic-nav-dropdown">

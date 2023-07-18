@@ -1,16 +1,19 @@
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link, NavLink } from 'react-router-dom';
 import {SuitHeartFill, Cart4 } from 'react-bootstrap-icons';
 import { useAuth0 } from "@auth0/auth0-react";
 
   
 
-function NavScroll() {
+function NavScroll({searchbtn}) {
 
+  const[search, setSearch] = useState();
   const { loginWithRedirect, logout, user, isAuthenticated  } = useAuth0();
 
   return (
@@ -36,7 +39,7 @@ function NavScroll() {
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="outline-success" onClick={() => searchbtn (search)}>Search</Button>
           </Form>
           <Nav
             className="d-flex"
@@ -81,16 +84,24 @@ function NavScroll() {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav variant="tabs" defaultActiveKey="/home" className="mx-auto my-2 my-lg-0 d-flex">
           <Nav.Item>
-            <Nav.Link href="/home" className="px-4">Home</Nav.Link>
+            {/* <Nav.Link eventKey="link-0" className="px-4" href='/'> */}
+              <Link className="px-4" to='/' >Home</Link>
+            {/* </Nav.Link> */}
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link eventKey="link-1" className="px-4">Product</Nav.Link>
+            {/* <Nav.Link eventKey="link-1" className="px-4"> */}
+              <Link className="px-4" to='/product'>Product</Link>
+            {/* </Nav.Link> */}
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link eventKey="link-2" className="px-4">About</Nav.Link>
+            {/* <Nav.Link eventKey="link-2" className="px-4"> */}
+              <Link className="px-4" to='/about'>About</Link>
+            {/* </Nav.Link> */}
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link eventKey="link-3" className="px-4">Contact</Nav.Link>
+            {/* <Nav.Link eventKey="link-3" className="px-4"> */}
+              <Link className="px-4" to='/contact'>Contact</Link>
+            {/* </Nav.Link> */}
           </Nav.Item>
         </Nav>
       </Navbar.Collapse>

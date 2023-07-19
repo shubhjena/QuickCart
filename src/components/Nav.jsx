@@ -7,14 +7,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link, NavLink } from 'react-router-dom';
 import {SuitHeartFill, Cart4 } from 'react-bootstrap-icons';
-import { useAuth0 } from "@auth0/auth0-react";
-
   
 
-function NavScroll({searchbtn}) {
+function NavScroll({searchbtn,loginWithRedirect, logout, user, isAuthenticated}) {
 
   const[search, setSearch] = useState();
-  const { loginWithRedirect, logout, user, isAuthenticated  } = useAuth0();
+ 
 
   return (
     <>

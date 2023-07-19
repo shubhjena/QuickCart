@@ -1,15 +1,14 @@
 import Col from 'react-bootstrap/Col';
 import Products from './ProductDetails';
-import ViewProduct from './ViewProduct';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 import ProductCards from './ProductCards';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Container } from 'react-bootstrap';
-
-function Product({product, setProduct, show, setShow,view, addToCart, addToWishlist}) {
+//product section of the website
+function Product({product, setProduct, view, addToCart, addToWishlist}) {
     
-
+    //functions to filter products based on selection in side menu
     const filtterproduct = (filterCategory) =>
     {
         const update = Products.filter((currProduct) => 

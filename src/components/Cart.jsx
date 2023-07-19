@@ -1,7 +1,6 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
-import Stack from 'react-bootstrap/Stack';
 import {Link} from 'react-router-dom'
 import {PlusSquareFill, DashSquareFill } from 'react-bootstrap-icons';
 
@@ -46,14 +45,21 @@ function Cart({cart,setCart}) {
     //total amount and quantity
     const totalAmount = cart.reduce((price,item)=>price+item.price*item.qty,0)
     const totalQuantity = cart.reduce((quantity,item)=>quantity+item.qty,0)
+
+    //checkout
+    const checkout = ()=>{
+        alert('Thank you for shopping with us! Please visit again.');
+        setCart([]);
+    };
 return (
-        <>
+        <>  {/*Empty cart section */}
             {cart.length === 0 && 
             <div className='text-center py-5'>
             <h2>Your Cart is Empty!</h2>
             <Link to='/product'><Button variant="info" className='m-3'>Shop Now</Button></Link>
             </div>
             }
+            {/*product section */}
             <div className='d-flex'>
                 <div className='m-3'>
                     {   
@@ -82,14 +88,17 @@ return (
                         })
                     }
                 </div>
+                {/*Checkout section */}
+                {cart.length !== 0 && 
                 <div className='m-3 p-4 bg-light'>
                     <h4>Total ({totalQuantity} items): ₹ {totalAmount} </h4>
                     <div className="d-grid gap-2 my-4">
-                        <Button variant="warning" size="md">
+                        <Button variant="warning" size="md" onClick={()=>checkout()}>
                            Checkout
                         </Button>
                     </div>
                 </div>
+                }
             </div>
         </>
     )

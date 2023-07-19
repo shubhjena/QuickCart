@@ -1,6 +1,6 @@
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
-import { ArrowRight,HeartFill } from 'react-bootstrap-icons';
+import { ArrowRight } from 'react-bootstrap-icons';
 
 
 function ProductCarousel() {

@@ -17,11 +17,11 @@ function Footer() {
             />
         </a>
         <p className="text-muted">&copy; 2023, Shubhashish Jena</p>
-        <i className='mt-3 d-flex gap-5'>
-            <Facebook size={30}/>
-            <Instagram size={30}/>
-            <Twitter size={30}/>
-            <Youtube size={30}/>
+        <i className='mt-3 d-flex flex-wrap gap-4'>
+            <a href='https://www.facebook.com/' target='blank'><Facebook size={25}/></a>
+            <a href='https://www.instagram.com/' target='blank'><Instagram size={25}/></a>
+            <a href='https://www.twitter.com/' target='blank'><Twitter size={25}/></a>
+            <a href='https://www.youtube.com/' target='blank'><Youtube size={25}/></a>
         </i>
         </div>
         <div className="col mb-3">

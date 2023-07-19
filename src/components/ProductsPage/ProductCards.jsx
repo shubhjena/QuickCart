@@ -1,6 +1,6 @@
 import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
-import Placeholder from 'react-bootstrap/Placeholder';
+// import Placeholder from 'react-bootstrap/Placeholder';
 import { Link } from 'react-router-dom';
 
 
@@ -15,8 +15,14 @@ function ProductCards({products,view,addToCart,addToWishlist}) {
                     <Card.Title>{product.title}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">{product.category}</Card.Subtitle>
                     <Card.Text>₹ {product.price}.00</Card.Text>
+
+                    {/*on click call addToCart function in App.js which appends product to cart state*/}
                     <Card.Text onClick={()=>{addToCart(product)}}>Add to cart</Card.Text>
+
+                    {/*on click call addToWishlist function in App.js which appends product to wishlist state*/}
                     <Card.Text onClick={()=>{addToWishlist(product)}}>Wishlist</Card.Text>
+
+                    {/*Link loads ViewProduct component*/}
                     <Link to="/dp" className="mx-3">View</Link>
                 </Card.Body>
             </Card>

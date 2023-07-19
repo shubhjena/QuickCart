@@ -2,7 +2,7 @@ import React from 'react'
 import ProductCards from '../ProductsPage/ProductCards'
 import { Container } from 'react-bootstrap';
 
-function TopProducts({view, addToCart}) {
+function TopProducts({view, addToCart, addToWishlist}) {
 
     const products = [
         {
@@ -59,7 +59,7 @@ function TopProducts({view, addToCart}) {
     <div>
         <h2 className='d-flex justify-content-center'>Top Products</h2>
         <Container className='d-flex flex-wrap justify-content-center'>
-            <ProductCards products={products} view={view} addToCart={addToCart}/>
+            <ProductCards products={products} view={view} addToCart={addToCart} addToWishlist={addToWishlist}/>
         </Container>
     </div>
   )

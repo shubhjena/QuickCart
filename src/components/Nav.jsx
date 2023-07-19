@@ -46,7 +46,7 @@ function NavScroll({searchbtn}) {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <NavLink to="/wishlist" className='ms-3'>Wishlist <SuitHeartFill color='red'/></NavLink>
+            <NavLink to='/wishlist' className='ms-3'>Wishlist<SuitHeartFill color='red'/></NavLink>
             <NavLink to='/cart' className='mx-3'>Cart<Cart4 /></NavLink>
             <>
             {isAuthenticated?

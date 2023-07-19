@@ -7,7 +7,7 @@ import ProductCards from './ProductCards';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Container } from 'react-bootstrap';
 
-function Product({product, setProduct, show, setShow,view, addToCart}) {
+function Product({product, setProduct, show, setShow,view, addToCart, addToWishlist}) {
     
 
     const filtterproduct = (filterCategory) =>
@@ -43,7 +43,7 @@ function Product({product, setProduct, show, setShow,view, addToCart}) {
         </Col>
         <Col sm={9}>
             <Container className='d-flex flex-wrap w-100 '>
-                <ProductCards products={product} view={view} addToCart={addToCart}/>
+                <ProductCards products={product} view={view} addToCart={addToCart} addToWishlist={addToWishlist}/>
             </Container>
         </Col>
       </Row>

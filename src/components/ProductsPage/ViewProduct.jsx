@@ -4,7 +4,7 @@ import Alert from 'react-bootstrap/Alert';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Card from 'react-bootstrap/Card';
 
-function Example({show,setShow}){
+function Example({show,setShow,addToCart}){
 
 return(
     <div>
@@ -16,11 +16,12 @@ return(
               <h2>{displayProduct.title}</h2>
               <h5>{displayProduct.category}</h5>
               <h4>₹ {displayProduct.price}</h4>
-              <Button variant="warning" className='me-3'>Buy now</Button>
-              <Button variant="secondary">Add to Cart</Button>
+              <Button variant="warning" className='me-3' onClick={()=>{addToCart(displayProduct)}}>Buy now</Button>
+              <Button variant="secondary" onClick={()=>{addToCart(displayProduct)}}>Add to Cart</Button>
             </div>
           </div>
         ))
+        
       }
     </div>
   )

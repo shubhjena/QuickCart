@@ -4,7 +4,7 @@ import Placeholder from 'react-bootstrap/Placeholder';
 import { Link } from 'react-router-dom';
 
 
-function ProductCards({products,view,addToCart}) {
+function ProductCards({products,view,addToCart,addToWishlist}) {
 
   return (
     <>
@@ -16,7 +16,7 @@ function ProductCards({products,view,addToCart}) {
                     <Card.Subtitle className="mb-2 text-muted">{product.category}</Card.Subtitle>
                     <Card.Text>₹ {product.price}.00</Card.Text>
                     <Card.Text onClick={()=>{addToCart(product)}}>Add to cart</Card.Text>
-                    <Card.Link href="#">Wishlist</Card.Link>
+                    <Card.Text onClick={()=>{addToWishlist(product)}}>Wishlist</Card.Text>
                     <Link to="/dp" className="mx-3">View</Link>
                 </Card.Body>
             </Card>

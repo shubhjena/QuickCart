@@ -9,6 +9,23 @@ import Button from 'react-bootstrap/Button';
 import Productdetail from "./components/ProductsPage/ProductDetails";
 
 const App = () => {
+
+  //wishlist
+  const[wishlist, setWishlist] = useState([]);
+  const addToWishlist = (product)=>
+  {
+    const exist = wishlist.find((item)=>{
+      return item.id===product.id
+    })
+      if(exist){
+        alert('Item already added to wishlist!')
+      }
+      else{
+        setWishlist([...wishlist,{...product}])
+        alert('Success! Product added to wishlist.')
+      }
+  }
+
   //add to cart
   const [cart,setCart] = useState([]);
   const addToCart = (product) => 
@@ -43,7 +60,7 @@ const App = () => {
     <div>
       <BrowserRouter>
         <Nav searchbtn={searchbtn} />
-        <RouteComponent product = {product} setProduct = {setProduct} show={show} setShow={setShow} view={view} cart={cart} setCart={setCart} addToCart={addToCart}/>
+        <RouteComponent product = {product} setProduct = {setProduct} show={show} setShow={setShow} view={view} cart={cart} setCart={setCart} addToCart={addToCart} wishlist={wishlist} setWishlist={setWishlist} addToWishlist={addToWishlist}/>
         <Footer/>
       </BrowserRouter>
     </div>

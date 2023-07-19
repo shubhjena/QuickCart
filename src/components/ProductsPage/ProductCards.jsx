@@ -8,8 +8,8 @@ function ProductCards({products,view,addToCart,addToWishlist}) {
 
   return (
     <>
-        { products.map((product,index)=>(
-            <Card key={index} style={{ width: '18rem' }} className='m-auto my-3' onClick={()=>{view(product)}}>
+       {products.map((product,index)=>(
+        <Card key={index} style={{ width: '18rem' }} className='m-auto my-3' onClick={()=>{view(product)}}>
                 <Card.Body>
                 <Image src={product.image} rounded />
                     <Card.Title>{product.title}</Card.Title>
@@ -45,7 +45,7 @@ function ProductCards({products,view,addToCart,addToWishlist}) {
             //       <Placeholder xs={5} /> <Placeholder xs={4} />
             //     </Placeholder>
             //   </Card.Body>
-            // </Card> 
+            // </Card>
         ))}
     </>
   );

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -11,12 +11,30 @@ import {SuitHeartFill, Cart4 } from 'react-bootstrap-icons';
 
 function NavScroll({searchbtn,loginWithRedirect, logout, user, isAuthenticated}) {
 
-  const[search, setSearch] = useState();
+  const handleSearch=() =>{
+    const searchCategory = document.getElementById('navSearch').value
+    if(searchCategory!=='') searchbtn (searchCategory);
+    document.getElementById('navSearch').value='';
+  }
+
+  useEffect(() => {
+    const keyDownHandler = event => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+
+        handleSearch();
+      }
+    };
+    document.getElementById('navSearch').addEventListener('keydown', keyDownHandler);
+
+    return () => {
+      document.getElementById('navSearch').removeEventListener('keydown', keyDownHandler);
+    };
+  }, []);
  
 
   return (
-    <>
-    
+    <>  
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
       <Navbar.Brand href="#home">
@@ -32,12 +50,13 @@ function NavScroll({searchbtn,loginWithRedirect, logout, user, isAuthenticated})
         <Navbar.Collapse id="navbarScroll">
           <Form className="mx-auto my-2 my-lg-0 d-flex">
             <Form.Control
+              id='navSearch'
               type="search"
               placeholder="Search"
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success" onClick={() => searchbtn (search)}>Search</Button>
+            <Button variant="outline-success" onClick={() => handleSearch()}>Search</Button>
           </Form>
           <Nav
             className="d-flex"

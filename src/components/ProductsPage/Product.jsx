@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 import ProductCards from './ProductCards';
 import ListGroup from 'react-bootstrap/ListGroup';
+import Button from 'react-bootstrap/Button';
 import { Container } from 'react-bootstrap';
 //product section of the website
 function Product({product, setProduct, view, addToCart, addToWishlist}) {
@@ -41,6 +42,12 @@ function Product({product, setProduct, view, addToCart, addToWishlist}) {
             </ListGroup>
         </Col>
         <Col sm={9}>
+            {(product.length ===0)&&
+              <div className='m-auto d-flex flex-column justify-content-center'>
+                <h4 className='m-auto'>Oops! no match found!</h4>
+                <Button variant="warning" className='mx-auto my-4' onClick={() => AllProducts ()}>Continue Shopping</Button>
+              </div>
+            }
             <Container className='d-flex flex-wrap w-100 '>
                 <ProductCards products={product} view={view} addToCart={addToCart} addToWishlist={addToWishlist}/>
             </Container>

@@ -48,7 +48,7 @@ const App = () => {
   {
     const update = Products.filter((currProduct) => 
     {
-      return currProduct.category === searchCategory;
+      return currProduct.category.toLowerCase() === searchCategory.toLowerCase();
     })
     setProduct(update);
   };

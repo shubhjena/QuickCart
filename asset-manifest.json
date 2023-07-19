@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/QuickCart/static/css/main.4da62354.css",
+    "main.js": "/QuickCart/static/js/main.823ec2f3.js",
+    "static/js/787.c539cd28.chunk.js": "/QuickCart/static/js/787.c539cd28.chunk.js",
+    "index.html": "/QuickCart/index.html",
+    "main.4da62354.css.map": "/QuickCart/static/css/main.4da62354.css.map",
+    "main.823ec2f3.js.map": "/QuickCart/static/js/main.823ec2f3.js.map",
+    "787.c539cd28.chunk.js.map": "/QuickCart/static/js/787.c539cd28.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4da62354.css",
+    "static/js/main.823ec2f3.js"
+  ]
+}

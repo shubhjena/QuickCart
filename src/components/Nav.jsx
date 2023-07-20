@@ -35,9 +35,9 @@ function NavScroll({searchbtn,loginWithRedirect, logout, user, isAuthenticated})
 
   return (
     <>  
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-tertiary ">
       <Container fluid>
-      <Navbar.Brand href="#home">
+      <NavLink to="/QuickCart/">
             <img 
               src="https://source.unsplash.com/1900x600/?logo"
               width="100"
@@ -45,7 +45,7 @@ function NavScroll({searchbtn,loginWithRedirect, logout, user, isAuthenticated})
               className="d-inline-block align-top"
               alt="E-commerce logo"
             />
-          </Navbar.Brand>
+          </NavLink>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Form className="mx-auto my-2 my-lg-0 d-flex">
@@ -63,8 +63,8 @@ function NavScroll({searchbtn,loginWithRedirect, logout, user, isAuthenticated})
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <NavLink to='/wishlist' className='ms-3'>Wishlist<SuitHeartFill color='red'/></NavLink>
-            <NavLink to='/cart' className='mx-3'>Cart<Cart4 /></NavLink>
+            <NavLink to='/QuickCart/wishlist' className='ms-3'>Wishlist<SuitHeartFill color='red'/></NavLink>
+            <NavLink to='/QuickCart/cart' className='mx-3'>Cart<Cart4 /></NavLink>
             <>
             {isAuthenticated?
               (<><NavDropdown title={`Hello, ${user.given_name}`} id="basic-nav-dropdown">
@@ -99,25 +99,25 @@ function NavScroll({searchbtn,loginWithRedirect, logout, user, isAuthenticated})
     <Container>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav variant="tabs" defaultActiveKey="/home" className="mx-auto my-2 my-lg-0 d-flex">
+        <Nav variant="tabs" defaultActiveKey="/" className="mx-auto my-2 my-lg-0 d-flex">
           <Nav.Item>
             {/* <Nav.Link eventKey="link-0" className="px-4" href='/'> */}
-              <Link className="px-4" to='/' >Home</Link>
+              <Link className="px-4" to='/QuickCart/' >Home</Link>
             {/* </Nav.Link> */}
           </Nav.Item>
           <Nav.Item>
             {/* <Nav.Link eventKey="link-1" className="px-4"> */}
-              <Link className="px-4" to='/product'>Product</Link>
+              <Link className="px-4" to='/QuickCart/product'>Product</Link>
             {/* </Nav.Link> */}
           </Nav.Item>
           <Nav.Item>
             {/* <Nav.Link eventKey="link-2" className="px-4"> */}
-              <Link className="px-4" to='/about'>About</Link>
+              <Link className="px-4" to='/QuickCart/about'>About</Link>
             {/* </Nav.Link> */}
           </Nav.Item>
           <Nav.Item>
             {/* <Nav.Link eventKey="link-3" className="px-4"> */}
-              <Link className="px-4" to='/contact'>Contact</Link>
+              <Link className="px-4" to='/QuickCart/contact'>Contact</Link>
             {/* </Nav.Link> */}
           </Nav.Item>
         </Nav>

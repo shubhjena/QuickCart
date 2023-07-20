@@ -7,7 +7,7 @@ function ProductCarousel() {
   return (
     <Carousel>
       <Carousel.Item className='bg-body-secondary'>
-      <img src="https://source.unsplash.com/1900x600/?Nature,Lightning"/>
+      <img src="https://source.unsplash.com/1900x600/?Nature,Lightning" alt='Nature,Lightning'/>
         <Carousel.Caption>
           <h3>The Grandeur of Nature</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -17,7 +17,7 @@ function ProductCarousel() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-      <img src="https://source.unsplash.com/1900x600/?flower,dark"/>
+      <img src="https://source.unsplash.com/1900x600/?flower,dark" alt='flower,dark'/>
         <Carousel.Caption>
           <h3>Flower Fiesta</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -27,7 +27,7 @@ function ProductCarousel() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img src="https://source.unsplash.com/1900x600/?dark"/>   
+        <img src="https://source.unsplash.com/1900x600/?dark" alt='dark'/>   
         <Carousel.Caption>
           <h3>Dark is Nigh</h3>
           <p>

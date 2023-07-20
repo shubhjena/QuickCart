@@ -56,7 +56,7 @@ return (
             {cart.length === 0 && 
             <div className='text-center py-5'>
             <h2>Your Cart is Empty!</h2>
-            <Link to='/product'><Button variant="info" className='m-3'>Shop Now</Button></Link>
+            <Link to='/QuickCart/product'><Button variant="info" className='m-3'>Shop Now</Button></Link>
             </div>
             }
             {/*product section */}

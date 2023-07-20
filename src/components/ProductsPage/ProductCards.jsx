@@ -23,7 +23,7 @@ function ProductCards({products,view,addToCart,addToWishlist}) {
                     <Card.Text onClick={()=>{addToWishlist(product)}}>Wishlist</Card.Text>
 
                     {/*Link loads ViewProduct component*/}
-                    <Link to="/dp" className="mx-3">View</Link>
+                    <Link to="/QuickCart/dp" className="mx-3">View</Link>
                 </Card.Body>
             </Card>
 

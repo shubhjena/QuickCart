@@ -82,7 +82,7 @@ const App = () => {
 
 
   return (
-    <div>
+    <div className=" bg-white">
       <BrowserRouter>
         <Nav searchbtn={searchbtn} loginWithRedirect={loginWithRedirect} logout={logout} user={user} isAuthenticated={isAuthenticated} />
         <RouteComponent product = {product} setProduct = {setProduct} show={show} view={view} cart={cart} setCart={setCart} addToCart={addToCart} wishlist={wishlist} setWishlist={setWishlist} addToWishlist={addToWishlist}/>

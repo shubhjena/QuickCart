@@ -1,6 +1,4 @@
-import Card from 'react-bootstrap/Card';
-import Image from 'react-bootstrap/Image';
-// import Placeholder from 'react-bootstrap/Placeholder';
+import {SuitHeartFill, Cart4, EyeFill } from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom';
 
 
@@ -9,23 +7,24 @@ function ProductCards({products,view,addToCart,addToWishlist}) {
   return (
     <>
        {products.map((product,index)=>(
-        <Card key={index} style={{ width: '18rem' }} className='m-auto my-3' onClick={()=>{view(product)}}>
-                <Card.Body>
-                <Image src={product.image} rounded />
-                    <Card.Title>{product.title}</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">{product.category}</Card.Subtitle>
-                    <Card.Text>₹ {product.price}.00</Card.Text>
+        <div key={index} className='bg-alpha rounded-lg m-auto my-3 w-72 shadow ' onClick={()=>{view(product)}}>
+                <div className='m-auto flex flex-col p-3'>
+                <img src={product.image} className='rounded' />
+                    <span className=' text-lg font-semibold'>{product.title}</span>
+                    <span className='text-muted'>{product.category}</span>
+                    <div className='flex gap-3 text-gamma text-lg font-semibold cursor-pointer'>
+                      <span className=' text-accent font-bold mr-auto'>₹ {product.price}.00</span>
+                      {/*on click call addToCart function in App.js which appends product to cart state*/}
+                      <span onClick={()=>{addToCart(product)}} className='my-auto' title="Add to cart"><Cart4/></span>
 
-                    {/*on click call addToCart function in App.js which appends product to cart state*/}
-                    <Card.Text onClick={()=>{addToCart(product)}}>Add to cart</Card.Text>
+                      {/*on click call addToWishlist function in App.js which appends product to wishlist state*/}
+                      <span onClick={()=>{addToWishlist(product)}} className='my-auto' title="Wish list"><SuitHeartFill/></span>
 
-                    {/*on click call addToWishlist function in App.js which appends product to wishlist state*/}
-                    <Card.Text onClick={()=>{addToWishlist(product)}}>Wishlist</Card.Text>
-
-                    {/*Link loads ViewProduct component*/}
-                    <Link to="/QuickCart/dp" className="mx-3">View</Link>
-                </Card.Body>
-            </Card>
+                      {/*Link loads ViewProduct component*/}
+                      <Link to="/QuickCart/dp" className="text-gamma no-underline my-auto" title="View"><EyeFill/></Link>
+                    </div>
+                </div>
+            </div>
 
             //  Placeholder 
             // <Card key={index} style={{ width: '18rem' }} className='m-auto my-3'>

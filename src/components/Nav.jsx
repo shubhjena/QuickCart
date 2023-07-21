@@ -1,12 +1,11 @@
 import { useEffect } from 'react';
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link, NavLink } from 'react-router-dom';
-import {SuitHeartFill, Cart4 } from 'react-bootstrap-icons';
+import {SuitHeartFill, Cart4, Search } from 'react-bootstrap-icons';
   
 
 function NavScroll({searchbtn,loginWithRedirect, logout, user, isAuthenticated}) {
@@ -34,97 +33,71 @@ function NavScroll({searchbtn,loginWithRedirect, logout, user, isAuthenticated})
  
 
   return (
-    <>  
-    <Navbar expand="lg" className="bg-body-tertiary ">
-      <Container fluid>
-      <NavLink to="/QuickCart/">
-            <img 
-              src="https://source.unsplash.com/1900x600/?logo"
-              width="100"
-              height="30"
-              className="d-inline-block align-top"
-              alt="E-commerce logo"
-            />
+    <> 
+      <Navbar expand="lg" className="bg-beta">
+        <Container fluid>
+          <NavLink to="/QuickCart/" className='px-3 text-white no-underline font-extrabold text-4xl '>
+            QuickCart
           </NavLink>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Form className="mx-auto my-2 my-lg-0 d-flex">
-            <Form.Control
-              id='navSearch'
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success" onClick={() => handleSearch()}>Search</Button>
-          </Form>
-          <Nav
-            className="d-flex"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <NavLink to='/QuickCart/wishlist' className='ms-3'>Wishlist<SuitHeartFill color='red'/></NavLink>
-            <NavLink to='/QuickCart/cart' className='mx-3'>Cart<Cart4 /></NavLink>
-            <>
-            {isAuthenticated?
-              (<><NavDropdown title={`Hello, ${user.given_name}`} id="basic-nav-dropdown">
-                {/* <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                Another action
-                </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item> */}
-                {/* <NavDropdown.Divider /> */}
-                <NavDropdown.Item href="#action/3.4" onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
-                  Logout
-                </NavDropdown.Item>
-                </NavDropdown>
-                <Navbar.Brand href="#home">
-                  <img
-                    src={user.picture}
-                    width="30"
-                    height="30"
-                    className="d-inline-block align-top rounded-circle"
-                    alt="React Bootstrap logo"
-                  />
-                </Navbar.Brand></>
-              ):
-              (<Button variant="success" onClick={() => loginWithRedirect()}>Login</Button>)
-            }
-          </>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-    <Navbar expand="lg" className="bg-body-tertiary">
-    <Container>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav variant="tabs" defaultActiveKey="/" className="mx-auto my-2 my-lg-0 d-flex">
-          <Nav.Item>
-            {/* <Nav.Link eventKey="link-0" className="px-4" href='/'> */}
-              <Link className="px-4" to='/QuickCart/' >Home</Link>
-            {/* </Nav.Link> */}
-          </Nav.Item>
-          <Nav.Item>
-            {/* <Nav.Link eventKey="link-1" className="px-4"> */}
-              <Link className="px-4" to='/QuickCart/product'>Product</Link>
-            {/* </Nav.Link> */}
-          </Nav.Item>
-          <Nav.Item>
-            {/* <Nav.Link eventKey="link-2" className="px-4"> */}
-              <Link className="px-4" to='/QuickCart/about'>About</Link>
-            {/* </Nav.Link> */}
-          </Nav.Item>
-          <Nav.Item>
-            {/* <Nav.Link eventKey="link-3" className="px-4"> */}
-              <Link className="px-4" to='/QuickCart/contact'>Contact</Link>
-            {/* </Nav.Link> */}
-          </Nav.Item>
-        </Nav>
-      </Navbar.Collapse>
-    </Container>
-  </Navbar>
-  </>
+          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Collapse id="navbarScroll">
+            <Form className="flex w-full justify-center">
+              <input 
+                id='navSearch'
+                type="search"
+                placeholder="Search"
+                className="w-9/12 max-w-lg mr-2 p-1.5 text-center border-2 hover:border-accent font-base rounded-lg"
+                aria-label="Search" />
+              <button onClick={() => handleSearch()} className='flex-none bg-accent px-4 rounded-lg text-white font-semibold border-1 border-accent hover:border-alpha'>
+                <span className='hidden md:inline-block'>Search</span>
+                <span className='md:hidden'><Search/></span>
+              </button>
+            </Form>
+            <Nav style={{ maxHeight: '100px' }} navbarScroll className="flex mx-3 gap-3" >
+              <NavLink to='/QuickCart/wishlist' className='flex m-auto no-underline font-semibold gap-1 text-white'>WishList<SuitHeartFill className='m-auto'/></NavLink>
+              <NavLink to='/QuickCart/cart' className='flex m-auto no-underline font-semibold gap-1 text-white'>Cart<Cart4 className='m-auto'/></NavLink>
+              <>
+                {isAuthenticated?
+                  (<>
+                    <NavDropdown title={`Hello, ${user.given_name}`} id="basic-nav-dropdown" className='font-semibold'>
+                      {/* <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                      <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                      <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item> */}
+                      {/* <NavDropdown.Divider /> */}
+                      <NavDropdown.Item onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+                          Logout
+                      </NavDropdown.Item>
+                    </NavDropdown>
+                  </>)
+                  :(<button onClick={() => loginWithRedirect()} className='px-3 py-1.5 bg-gamma text-white text-sm rounded border-1 border-gamma shadow hover:border-alpha'>Login</button>)
+                }
+              </>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <Navbar expand="lg" className="bg-alpha">
+        <Container>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav defaultActiveKey="/QuickCart/" className="mx-auto my-2 my-lg-0 d-flex">
+              <Nav.Item>
+                  <Link className="px-4 font-bold text-accent no-underline hover:underline" to='/QuickCart/' >Home</Link>
+              </Nav.Item>
+              <Nav.Item>
+                  <Link className="px-4 font-bold text-accent no-underline hover:underline" to='/QuickCart/product'>Product</Link>
+              </Nav.Item>
+              <Nav.Item>
+                  <Link className="px-4 font-bold text-accent no-underline hover:underline" to='/QuickCart/about'>About</Link>
+              </Nav.Item>
+              <Nav.Item>
+                  <Link className="px-4 font-bold text-accent no-underline hover:underline" to='/QuickCart/contact'>Contact</Link>
+              </Nav.Item>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </>
   );
 }
 

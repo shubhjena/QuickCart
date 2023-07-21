@@ -25,7 +25,7 @@ function Product({product, setProduct, view, addToCart, addToWishlist}) {
 
   return (
     <div>
-      <h1 className='d-flex mx-5'>
+      <h1 className='flex mx-5 text-base'>
         #Products
       </h1>
       <Tab.Container id="left-tabs-example" defaultActiveKey="first">

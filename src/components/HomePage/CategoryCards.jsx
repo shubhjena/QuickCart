@@ -1,6 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
+import { Link } from 'react-router-dom';
 
 function CategoryCards() {
 
@@ -35,13 +36,15 @@ function CategoryCards() {
   return (
     <div className='d-flex'>
         {cards.map((card,index)=>(
-            <Card key={index} style={{ width: '15rem' }} className="m-auto my-5 border-0" >
+          <Card key={index} style={{ width: '15rem' }} className="m-auto my-5 border-0" >
+            <Link to='product' className='no-underline text-gamma'>
             <Image src={card.image} roundedCircle />
             <Card.Body className='text-center'>
-                <Card.Title className='mb-4'>{card.title}</Card.Title>
+                <Card.Title className='mb-4 no-underline'>{card.title}</Card.Title>
                 <Button variant="primary">Shop now!</Button>
             </Card.Body>
-        </Card>
+                </Link>
+          </Card>
         ))}
     </div>
   );

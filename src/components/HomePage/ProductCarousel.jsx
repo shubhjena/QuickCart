@@ -1,6 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 import { ArrowRight } from 'react-bootstrap-icons';
+import { Link } from 'react-router-dom';
 
 
 function ProductCarousel() {
@@ -11,9 +12,11 @@ function ProductCarousel() {
         <Carousel.Caption>
           <h3>The Grandeur of Nature</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          <Button variant="primary" size="lg" className='mt-4 mb-5 px-5'>
-              <span>Explore</span> <ArrowRight className='inline'/>
-          </Button>
+          <Link to='product'>
+            <Button variant="primary" size="lg" className='mt-4 mb-5 px-5'>
+                <span>Explore</span> <ArrowRight className='inline'/>
+            </Button>
+          </Link>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -21,9 +24,11 @@ function ProductCarousel() {
         <Carousel.Caption>
           <h3>Flower Fiesta</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <Button variant="primary" size="lg" className='mt-4 mb-5 px-5'>
-              <span>Explore</span> <ArrowRight className='inline'/>
-          </Button>
+          <Link to='product'>
+            <Button variant="primary" size="lg" className='mt-4 mb-5 px-5'>
+                <span>Explore</span> <ArrowRight className='inline'/>
+            </Button>
+          </Link>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -33,9 +38,11 @@ function ProductCarousel() {
           <p>
             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
           </p>
-          <Button variant="primary" size="lg" className='mt-4 mb-5 px-5'>
-              <span>Explore</span> <ArrowRight className='inline'/>
-          </Button>
+          <Link to='product'>
+            <Button variant="primary" size="lg" className='mt-4 mb-5 px-5'>
+                <span>Explore</span> <ArrowRight className='inline'/>
+            </Button>
+          </Link>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

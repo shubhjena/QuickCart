@@ -11,13 +11,13 @@ module.exports = {
       colors:{
       transparent: 'transparent',
       current: 'currentColor',
-      'white': '#FFF3E2',
+      'background': '#FFF3E2',
       'black': '#1B1A17',
       'alpha': '#FFE15D',
       'beta': '#C07F00',
       'gamma': '#A61F69',
       'accent': '#42032C',
-      'metal': '#565584',
+      'metal': '#DDDDDD',
       'shine': '#ecebff',
       }
     },

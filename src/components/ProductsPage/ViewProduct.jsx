@@ -13,7 +13,7 @@ return(
               <h2>{displayProduct.title}</h2>
               <h5>{displayProduct.category}</h5>
               <h4>₹ {displayProduct.price}</h4>
-              <Link to='/QuickCart/cart'><Button variant="warning" className='me-3' onClick={()=>{addToCart(displayProduct)}}>Buy now</Button></Link>
+              <Link to='/cart'><Button variant="warning" className='me-3' onClick={()=>{addToCart(displayProduct)}}>Buy now</Button></Link>
               <Button variant="secondary" onClick={()=>{addToCart(displayProduct)}}>Add to Cart</Button>
             </div>
           </div>

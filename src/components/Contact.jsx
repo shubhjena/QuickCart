@@ -42,9 +42,9 @@ const ContactForm = () => {
   };
 
   return (
-    <div className='w-50 m-5 justify-content-center'>
+    <div className='w-50 mx-auto my-5 p-5 bg-metal rounded-lg shadow'>
       <h2>Contact Us</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='text-xl font-medium font-mono'>
         <div>
           <label htmlFor="name">Name:</label>
           <input
@@ -53,6 +53,7 @@ const ContactForm = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             style={inputStyle}
+            className='border-accent border-2 rounded bg-background'
             required
           />
         </div>
@@ -64,6 +65,7 @@ const ContactForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             style={inputStyle}
+            className='border-accent border-2 rounded bg-background'
             required
           />
         </div>
@@ -74,6 +76,7 @@ const ContactForm = () => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             style={textareaStyle}
+            className='border-accent border-2 rounded bg-background'
             required
           ></textarea>
         </div>

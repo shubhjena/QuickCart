@@ -36,8 +36,8 @@ function NavScroll({searchbtn,loginWithRedirect, logout, user, isAuthenticated})
     <> 
       <Navbar expand="lg" className="bg-beta">
         <Container fluid>
-          <NavLink to="/QuickCart/" className='px-3 text-white no-underline font-extrabold text-4xl '>
-            QuickCart
+          <NavLink to="/" className='px-3 text-white no-underline font-extrabold text-4xl '>
+            QuickCart<span className='text-xs font-mono bg-gray-600 rounded px-1 py-0.5 mx-1 font-thin'>BETA</span>
           </NavLink>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
@@ -54,8 +54,8 @@ function NavScroll({searchbtn,loginWithRedirect, logout, user, isAuthenticated})
               </button>
             </Form>
             <Nav style={{ maxHeight: '100px' }} navbarScroll className="flex mx-3 gap-3" >
-              <NavLink to='/QuickCart/wishlist' className='flex m-auto no-underline font-semibold gap-1 text-white'>WishList<SuitHeartFill className='m-auto'/></NavLink>
-              <NavLink to='/QuickCart/cart' className='flex m-auto no-underline font-semibold gap-1 text-white'>Cart<Cart4 className='m-auto'/></NavLink>
+              <NavLink to='/wishlist' className='flex m-auto no-underline font-semibold gap-1 text-white'>WishList<SuitHeartFill className='m-auto'/></NavLink>
+              <NavLink to='/cart' className='flex m-auto no-underline font-semibold gap-1 text-white'>Cart<Cart4 className='m-auto'/></NavLink>
               <>
                 {isAuthenticated?
                   (<>
@@ -80,18 +80,18 @@ function NavScroll({searchbtn,loginWithRedirect, logout, user, isAuthenticated})
         <Container>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav defaultActiveKey="/QuickCart/" className="mx-auto my-2 my-lg-0 d-flex">
+            <Nav defaultActiveKey="//" className="mx-auto my-2 my-lg-0 d-flex">
               <Nav.Item>
-                  <Link className="px-4 font-bold text-accent no-underline hover:underline" to='/QuickCart/' >Home</Link>
+                  <Link className="px-4 font-bold text-accent no-underline hover:underline" to='/' >Home</Link>
               </Nav.Item>
               <Nav.Item>
-                  <Link className="px-4 font-bold text-accent no-underline hover:underline" to='/QuickCart/product'>Product</Link>
+                  <Link className="px-4 font-bold text-accent no-underline hover:underline" to='/product'>Product</Link>
               </Nav.Item>
               <Nav.Item>
-                  <Link className="px-4 font-bold text-accent no-underline hover:underline" to='/QuickCart/about'>About</Link>
+                  <Link className="px-4 font-bold text-accent no-underline hover:underline" to='/about'>About</Link>
               </Nav.Item>
               <Nav.Item>
-                  <Link className="px-4 font-bold text-accent no-underline hover:underline" to='/QuickCart/contact'>Contact</Link>
+                  <Link className="px-4 font-bold text-accent no-underline hover:underline" to='/contact'>Contact</Link>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>

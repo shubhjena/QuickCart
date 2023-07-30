@@ -8,7 +8,7 @@ function Footer() {
     <div className="b-example-divider"></div>
     <footer className="row row-cols-1 row-cols-sm-2 row-cols-md-5 p-5 border-top">
         <div className="col mb-3">
-        <Link to="/QuickCart/" className=' text-black no-underline font-extrabold text-4xl '>
+        <Link to="//" className=' text-black no-underline font-extrabold text-4xl '>
             QuickCart
         </Link>
         <p className="text-muted mt-2">&copy;2023, Shubhashish Jena</p>
@@ -29,23 +29,23 @@ function Footer() {
         <div className="col mb-3">
         <h5>My Account</h5>
         <ul className="nav flex-column">
-            <li className="nav-item mb-2"><Link to="/QuickCart/" className="nav-link p-0 text-muted">Account</Link></li>
-            <li className="nav-item mb-2"><Link to="/QuickCart/" className="nav-link p-0 text-muted">Orders</Link></li>
-            <li className="nav-item mb-2"><Link to="/QuickCart/cart" className="nav-link p-0 text-muted">Cart</Link></li>
-            <li className="nav-item mb-2"><Link to="/QuickCart/wishlist" className="nav-link p-0 text-muted">Wishlist</Link></li>
-            <li className="nav-item mb-2"><Link to="/QuickCart/" className="nav-link p-0 text-muted">Shipping</Link></li>
+            <li className="nav-item mb-2"><Link to="//" className="nav-link p-0 text-muted">Account</Link></li>
+            <li className="nav-item mb-2"><Link to="//" className="nav-link p-0 text-muted">Orders</Link></li>
+            <li className="nav-item mb-2"><Link to="//cart" className="nav-link p-0 text-muted">Cart</Link></li>
+            <li className="nav-item mb-2"><Link to="//wishlist" className="nav-link p-0 text-muted">Wishlist</Link></li>
+            <li className="nav-item mb-2"><Link to="//" className="nav-link p-0 text-muted">Shipping</Link></li>
         </ul>
         </div>
 
         <div className="col mb-3">
         <h5>Pages</h5>
         <ul className="nav flex-column">
-            <li className="nav-item mb-2"><Link to="/QuickCart/" className="nav-link p-0 text-muted">Home</Link></li>
-            <li className="nav-item mb-2"><Link to="/QuickCart/product" className="nav-link p-0 text-muted">Products</Link></li>
-            <li className="nav-item mb-2"><Link to="/QuickCart/about" className="nav-link p-0 text-muted">About</Link></li>
-            <li className="nav-item mb-2"><Link to="/QuickCart/contact" className="nav-link p-0 text-muted">Contacts</Link></li>
-            {/* <li className="nav-item mb-2"><Link to="/QuickCart/" className="nav-link p-0 text-muted">FAQs</Link></li>
-            <li className="nav-item mb-2"><Link to="/QuickCart/" className="nav-link p-0 text-muted">Terms & Conditions</Link></li> */}
+            <li className="nav-item mb-2"><Link to="//" className="nav-link p-0 text-muted">Home</Link></li>
+            <li className="nav-item mb-2"><Link to="//product" className="nav-link p-0 text-muted">Products</Link></li>
+            <li className="nav-item mb-2"><Link to="//about" className="nav-link p-0 text-muted">About</Link></li>
+            <li className="nav-item mb-2"><Link to="//contact" className="nav-link p-0 text-muted">Contacts</Link></li>
+            {/* <li className="nav-item mb-2"><Link to="//" className="nav-link p-0 text-muted">FAQs</Link></li>
+            <li className="nav-item mb-2"><Link to="//" className="nav-link p-0 text-muted">Terms & Conditions</Link></li> */}
         </ul>
         </div>
     </footer>

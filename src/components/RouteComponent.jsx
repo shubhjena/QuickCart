@@ -12,13 +12,13 @@ const route = ({product,setProduct,show,view,cart,setCart,addToCart,wishlist,set
   return (
     <div>
       <Routes>
-        <Route exact path='/QuickCart/' element={<Home view={view} addToCart={addToCart} addToWishlist={addToWishlist}/>}/>
-        <Route exact path='/QuickCart/product' element={<Product product={product} setProduct={setProduct} view={view} addToCart={addToCart} addToWishlist={addToWishlist}/>}/>
-        <Route exact path='/QuickCart/dp' element={<ViewProduct show={show} addToCart={addToCart}/>}/>
-        <Route exact path='/QuickCart/cart' element={<Cart cart={cart} setCart={setCart}/>}/>
-        <Route exact path='/QuickCart/wishlist' element={<Wishlist wishlist={wishlist} setWishlist={setWishlist}/>}/>
-        <Route exact path='/QuickCart/contact' element={<Contact/>}/>
-        <Route exact path='/QuickCart/about' element={<About/>}/>
+        <Route exact path='/' element={<Home view={view} addToCart={addToCart} addToWishlist={addToWishlist}/>}/>
+        <Route exact path='/product' element={<Product product={product} setProduct={setProduct} view={view} addToCart={addToCart} addToWishlist={addToWishlist}/>}/>
+        <Route exact path='/dp' element={<ViewProduct show={show} addToCart={addToCart}/>}/>
+        <Route exact path='/cart' element={<Cart cart={cart} setCart={setCart}/>}/>
+        <Route exact path='/wishlist' element={<Wishlist wishlist={wishlist} setWishlist={setWishlist}/>}/>
+        <Route exact path='/contact' element={<Contact/>}/>
+        <Route exact path='/about' element={<About/>}/>
       </Routes>
     </div>
   )
